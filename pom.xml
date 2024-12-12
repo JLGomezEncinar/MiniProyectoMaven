@@ -78,7 +78,7 @@
                     <archive>
                         <manifest>
                             <mainClass>
-                                org.example.Main
+                                com.iessanalberto.dam1.Main
                             </mainClass>
                         </manifest>
                     </archive>
