@@ -73,6 +73,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
+                <version>4.0.0-beta-1</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -98,7 +99,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>RELEASE</version>
+            <version>5.11.3</version>
             <scope>test</scope>
         </dependency>
 
