@@ -51,7 +51,7 @@ public class TestMain {
 
             // Obtenemos el usuario insertado
             List<Usuario> usuariosAntes = usuarioDAO.obtenerTodos();
-            Usuario usuarioOriginal = usuariosAntes.get(0);
+            Usuario usuarioOriginal = usuariosAntes.getFirst();
 
             // Creamos un nuevo usuario con datos actualizados
             usuarioOriginal.setNombre("Juan Actualizado");
