@@ -31,7 +31,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '23'  # Ajusta la versión según tu proyecto
-        distribution: 'JDK'
+        distribution: 'openjdk'
 
     # Paso 3: Instalar dependencias de Maven
     - name: Install dependencies
