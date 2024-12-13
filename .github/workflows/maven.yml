@@ -7,15 +7,15 @@
 # documentation.
 
 name: Test con MySQL remoto
-name: CI - Test con MySQL remoto
+
 
 on:
   push:
     branches:
-      - main  # O la rama que desees
+      - master  # O la rama que desees
   pull_request:
     branches:
-      - main  # O la rama que desees
+      - master  # O la rama que desees
 
 jobs:
   test:
