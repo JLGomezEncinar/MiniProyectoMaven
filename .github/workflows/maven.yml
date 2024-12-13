@@ -7,46 +7,50 @@
 # documentation.
 
 name: Test con MySQL remoto
+name: CI - Test con MySQL remoto
 
 on:
   push:
     branches:
-      - master
+      - main  # O la rama que desees
   pull_request:
     branches:
-      - master
+      - main  # O la rama que desees
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
+    # Paso 1: Obtener el código del repositorio
     - name: Check out code
       uses: actions/checkout@v2
 
+    # Paso 2: Configurar Java (ajusta la versión de Java según tu proyecto)
     - name: Set up Java
       uses: actions/setup-java@v2
       with:
-        java-version: '23'  # Ajusta la versión según tu necesidad
-        distribution: 'adoptopenjdk'
+        java-version: '23'  # Ajusta la versión según tu proyecto
+        distribution: 'JDK'
 
-    - name: Instalar dependencias
+    # Paso 3: Instalar dependencias de Maven
+    - name: Install dependencies
       run: mvn install -DskipTests
 
-    - name: Configurar variables de entorno para MySQL
+    # Paso 4: Copiar el archivo db.properties (si está en el directorio correcto)
+    - name: Copy db.properties
       run: |
-        echo "DB_HOST=${{ secrets.DB_HOST }}" >> $GITHUB_ENV
-        echo "DB_PORT=${{ secrets.DB_PORT }}" >> $GITHUB_ENV
-        echo "DB_NAME=${{ secrets.DB_NAME }}" >> $GITHUB_ENV
-        echo "DB_USER=${{ secrets.DB_USER }}" >> $GITHUB_ENV
-        echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $GITHUB_ENV
+        cp src/main/resources/db.properties $GITHUB_WORKSPACE/target/classes/
 
-    - name: Ejecutar pruebas
+    # Paso 5: Ejecutar las pruebas unitarias
+    - name: Run tests
       run: mvn test
 
-    - name: Verificar resultados
+    # Paso 6: Verificar los resultados de las pruebas
+    - name: Verify test results
       run: |
-        tail -n 10 target/surefire-reports/*.txt
+        tail -n 10 target/surefire-reports/*.txt  # Muestra las últimas 10 líneas de los resultados de las pruebas
+
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
