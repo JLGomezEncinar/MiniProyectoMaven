@@ -22,7 +22,7 @@ primera base de datos y en el de la carpeta prod el de la segunda.
 Para poder gestionar las operaciones CRUD necesitamos principalmente estas clases:
 
 <ul>
-<li> Clase Conexion.
+<li> Clase ConexionDB.
 <li> Clase Usuario. </li>
 <li> Clase UsuarioDAO. </li>
 <li> Clase TestMain. </li></ul>
@@ -33,7 +33,7 @@ de datos.</b>
 Para poder implementar la lógica he seguido los siguientes pasos:
 
 <ol>
-<li>En la clase Conexion crearemos el método para conectarnos a la base de datos, de tal
+<li>En la clase ConexionDB crearemos el método para conectarnos a la base de datos, de tal
 forma que, dependiendo del perfil elegido, nos conectemos al perfil deseado.</li>
 <li>Después en la clase Usuario introduciremos las variables o campos que forman parte de nuestra
 base de datos (en este caso id,nombre,email y fechadecreación).</li>
