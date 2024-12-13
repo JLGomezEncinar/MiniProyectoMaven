@@ -62,7 +62,7 @@ public class TestMain {
 
             // Verificamos que el usuario haya sido actualizado
             List<Usuario> usuariosDespues = usuarioDAO.obtenerTodos();
-            Usuario usuarioActualizado = usuariosDespues.get(0);
+            Usuario usuarioActualizado = usuariosDespues.getFirst();
 
             assertEquals("Juan Actualizado", usuarioActualizado.getNombre(), "El nombre del usuario no se actualizó");
             assertEquals("juan.actualizado@example.com", usuarioActualizado.getEmail(), "El email del usuario no se actualizó");
