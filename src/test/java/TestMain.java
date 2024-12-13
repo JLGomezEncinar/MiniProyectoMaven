@@ -75,7 +75,7 @@ public class TestMain {
             List<Usuario> usuariosAntes = usuarioDAO.obtenerTodos();
             assertEquals(1, usuariosAntes.size(), "Debe haber un usuario antes de eliminar");
 
-            usuarioDAO.eliminar(usuariosAntes.get(0).getId());
+            usuarioDAO.eliminar(usuariosAntes.getFirst().getId());
 
             List<Usuario> usuariosDespues = usuarioDAO.obtenerTodos();
             assertEquals(0, usuariosDespues.size(), "La tabla debe estar vacía después de eliminar");
