@@ -21,7 +21,7 @@ public class TestMain {
         @BeforeEach
         public void setUp () throws SQLException {
             usuarioDAO = new UsuarioDAO();
-            usuarioDAO.createTable();  // Crear la tabla antes de cada prueba
+            usuarioDAO.createTable();  // Crear la tabla antes de cada prueba.
         }
 
         @Test
