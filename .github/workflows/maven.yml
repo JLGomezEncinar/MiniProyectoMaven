@@ -28,6 +28,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '23'  # Ajusta la versión según tu necesidad
+        distribution: 'adoptopenjdk'
 
     - name: Instalar dependencias
       run: mvn install -DskipTests
