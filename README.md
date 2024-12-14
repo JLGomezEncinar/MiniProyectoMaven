@@ -67,3 +67,5 @@ que realizar los siguientes pasos:
 <li>Se creará dentro de tu repositorio en la carpeta .github/workflows un archivo .yml, que es el
 encargado de definir el flujo de trabajo de CI y especifica los pasos que GitHub Actions debe seguir para construir el proyecto, ejecutar las pruebas y proporcionarte los resultados. Podremos cambiar la
 configuración del archivo .yml y, para finalizar, damos a Commit Changes para guardarlo. </li></ol>
+He realizado una serie de actualizaciones al archivo pom.xml (agregado el plugin de maven surefire en el build y activado por defecto el perfil H2 de pruebas de bases de datos en memoria), al hacer push
+GitHub Actions realiza las pruebas correctamente.
