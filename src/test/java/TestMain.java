@@ -22,7 +22,7 @@ public class TestMain {
         public void setUp () throws SQLException {
             usuarioDAO = new UsuarioDAO();
             usuarioDAO.createTable();  // Crear la tabla antes de cada prueba.
-            System.out.println(usuarioDAO);
+
         }
 
         @Test
