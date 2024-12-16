@@ -15,7 +15,6 @@ para conectarnos a la base de datos, url, que indica la dirección en la que se 
 datos, usuario y contraseña de esa base de datos) y a continuación he creado una carpeta dev y otra prod
 donde he creado un archivo db.properties en cada una, indicando en el de la carpeta dev los datos de la
 primera base de datos y en el de la carpeta prod el de la segunda.
-
 <h2>2. Desarrollo de la Aplicación:</h2>
 <b> Crear las clases necesarias para gestionar las operaciones CRUD con JDBC.</b>
 
