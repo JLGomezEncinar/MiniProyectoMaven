@@ -21,7 +21,8 @@ public class TestMain {
         @BeforeEach
         public void setUp () throws SQLException {
             usuarioDAO = new UsuarioDAO();
-            usuarioDAO.createTable();  // Crear la tabla antes de cada prueba
+            usuarioDAO.createTable();  // Crear la tabla antes de cada prueba.
+
         }
 
         @Test
@@ -51,7 +52,7 @@ public class TestMain {
 
             // Obtenemos el usuario insertado
             List<Usuario> usuariosAntes = usuarioDAO.obtenerTodos();
-            Usuario usuarioOriginal = usuariosAntes.get(0);
+            Usuario usuarioOriginal = usuariosAntes.getFirst();
 
             // Creamos un nuevo usuario con datos actualizados
             usuarioOriginal.setNombre("Juan Actualizado");
@@ -62,7 +63,7 @@ public class TestMain {
 
             // Verificamos que el usuario haya sido actualizado
             List<Usuario> usuariosDespues = usuarioDAO.obtenerTodos();
-            Usuario usuarioActualizado = usuariosDespues.get(0);
+            Usuario usuarioActualizado = usuariosDespues.getFirst();
 
             assertEquals("Juan Actualizado", usuarioActualizado.getNombre(), "El nombre del usuario no se actualizó");
             assertEquals("juan.actualizado@example.com", usuarioActualizado.getEmail(), "El email del usuario no se actualizó");
@@ -75,7 +76,7 @@ public class TestMain {
             List<Usuario> usuariosAntes = usuarioDAO.obtenerTodos();
             assertEquals(1, usuariosAntes.size(), "Debe haber un usuario antes de eliminar");
 
-            usuarioDAO.eliminar(usuariosAntes.get(0).getId());
+            usuarioDAO.eliminar(usuariosAntes.getFirst().getId());
 
             List<Usuario> usuariosDespues = usuarioDAO.obtenerTodos();
             assertEquals(0, usuariosDespues.size(), "La tabla debe estar vacía después de eliminar");
